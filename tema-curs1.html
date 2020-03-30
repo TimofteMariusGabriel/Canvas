@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <script>
+    //1.
+        function calc(radius) {
+            const Pi = 3.14 ;
+            return 2 * radius * Pi 
+        }
+       
+        console.log(`aria cercului este egala cu ${calc(10)} `) ;
+
+
+     //2.
+        let movies = ["TheLastSamurai", "Matrix", "TheGameChangers", "TheMindOfAaronHernandez", "Cernobil"]
+
+        for (let i = 0; i < movies.length; i++) {
+            titlul = movies[i];
+            pozitia = i;
+
+            console.log(`titlu: ${titlul} pozitia: ${pozitia}`)
+        }
+
+    //3 (daca luam toate valorile ca numere)
+    let arr = [5, 3, "1", 7, "9", 30, "45", 7]
+        let min =  Math.min(...arr);
+        console.log(`minim: ${+min}`)
+
+        let max = Math.max(...arr);
+        console.log(`maxim: ${+max}`)
+
+    //3 (daca eliminam string-urile) 
+
+    let arr2 = [5, 3, "1", 7, "9", 30, "45", 7];
+    let numArr2 = (arr2.filter(item => typeof item === 'number'));
+
+        let min2 =  Math.min(...numArr2);
+            console.log(`minim: ${+min2}`)
+
+        let max2 = Math.max(...numArr2);
+            console.log(`maxim: ${+max2}`)
+
+        
+    </script>
+
+</body>
+</html>
