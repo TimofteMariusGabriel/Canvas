@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+console.log(" -------------- Ex: 1 ------------ ");
+
+let ron = 749;
+let euro = ron * 4.83;
+let usd = ron * 4.3; 
+let huf = ron * 0.0013;
+
+switch (huf) {
+
+    case euro:
+        console.log("euro: "+ euro)
+        break;
+
+    case usd:
+        console.log("usd: "+ usd)
+        break;
+
+    case huf:
+        console.log("huf: "+ huf)
+        break;
+
+    default:
+        console.log("Enter a valid value !");
+        break;
+}
+
+
+console.log(" -------------- Ex: 2 ----------")
+
+function typeOf( parameter ) { 
+    console.log("the type is: " + typeof parameter)
+}
+typeOf(4)
+
+
+console.log(" -------------- Ex: 3 ----------")
+
+
+function abbr(params) {
+    let text = "";
+    let arr = params.split(" ");
+    for ( let i = 0; i < arr.length; i++) {
+        text += arr[i].substr(0,1)
+    }
+ return text;
+
+}
+console.log(abbr("Universitatea Tehnica Cluj Napoca"))
+
+
+// part two of ex: 3
+
+
+const fraze = [
+"Quisque faucibus ipsum id nibh egestas bibendum.",
+"Phasellus tincidunt sapien nec est tempus lacinia.",
+"Curabitur ac elit at turpis ultrices hendrerit at et tellus.",
+"Praesent a magna a ligula gravida sodales eu ut erat.",
+"Ut eleifend velit vitae ipsum mattis viverra."
+]
+
+for (let i = 0; i < fraze.length; i++){
+    console.log(abbr(fraze[i]))
+}
+
+console.log(" -------------- Ex: 4 ----------")
+
+class Shape {
+    constructor(color, laturi ) {
+        this.color = color;
+        this.laturi = laturi;
+        this.calcPerimeter = this.calcPerimeter.bind(this); 
+    } 
+
+    calcPerimeter() {
+        if(!Array.isArray(this.laturi)){
+           return console.log('laturi must be an array');
+        }
+        let perimeter = 0 ;
+
+        for (let i = 0 ; i < this.laturi.length; i++ ){
+            perimeter = perimeter + this.laturi[i];
+        } 
+        return perimeter;
+    } 
+
+    calcSemiperimeter() {
+        const perimeter = this.calcPerimeter();
+        let semip =  perimeter / 2 ;
+        return semip;
+    }
+
+    typeOfPoligon () {
+        switch (this.laturi.length) {
+        case 3:
+            return "trighiuni 3 laturi";
+            break;
+        case 4:
+            return "patrulater 4 laturi";
+            break;
+        case 5:
+            return "pentagon 5 laturi";
+            break;  
+        case 6:
+            return "hexagon 6 laturi";
+            break;  
+    
+        default:
+            return "WORK IN PROGRESS" ;
+            break;
+    }
+}
+}
+
+ const triunghi = new Shape('red', [1,2,3])
+
+ console.log(triunghi.typeOfPoligon() );
+ console.log(triunghi.color)
+ console.log(triunghi.calcPerimeter());
+ console.log(triunghi.calcSemiperimeter())
+
+
+ console.log(" -------------- Ex: 5 ----------")
+
+class Triunghi extends Shape {
+    constructor(color, laturi) {
+        super (color, laturi)
+    }
+aria() {
+     let semip = super.calcSemiperimeter() ;
+
+    return Math.sqrt(semip * (semip - this.laturi[0]) * (semip - this.laturi[1]) * (semip - this.laturi[2]))
+    } 
+} 
+const triunghiArea = new Triunghi('blue', [2,2,2]);
+
+console.log(triunghiArea.typeOfPoligon());
+console.log(triunghiArea.calcPerimeter());
+console.log(triunghiArea.calcSemiperimeter());
+console.log(triunghiArea.aria());
+console.log(triunghiArea.color);
+
+
+class Square extends Shape {
+    constructor(color, laturi) {
+        super (color, laturi)
+    }
+    aria() {
+        return this.laturi[0] ** 2;
+        } 
+} 
+const square = new Square('grey', [2,2,2,2]);
+
+console.log(square.typeOfPoligon());
+console.log(square.calcPerimeter());
+console.log(square.calcSemiperimeter());
+console.log(square.aria());
+console.log(square.color);
+
+
+</script>
+    
+</body>
+</html>
