@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-
+    <canvas id="square" width="150" height="150">
+    </canvas>
 <script>
 
 console.log(" -------------- Ex: 1 ------------ ");
@@ -158,15 +159,27 @@ class Square extends Shape {
     }
     aria() {
         return this.laturi[0] ** 2;
-        } 
+        }
+    
+    draw(){
+        const canvas = document.getElementById('square');
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = this.color;
+        ctx.fillRect(30, 10, this.laturi[0], this.laturi[0]);
+
+    }
 } 
-const square = new Square('grey', [2,2,2,2]);
+const square = new Square('grey', [60]);
 
 console.log(square.typeOfPoligon());
 console.log(square.calcPerimeter());
 console.log(square.calcSemiperimeter());
 console.log(square.aria());
 console.log(square.color);
+
+// exercitiul 2 - tema 3
+
+square.draw();
 
 
 </script>
