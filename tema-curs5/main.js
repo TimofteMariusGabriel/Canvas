@@ -17,13 +17,7 @@ let validator = new Validator(shape, grid.cells);
 document.addEventListener("keydown", event => {
     switch (event.key) {
         case 'ArrowUp':
-            const down =  validator.checkNext(shape.row + 1, shape.column);
-            const left = validator.checkNext(shape.row, shape.column - 1);
-            const right = validator.checkNext(shape.row, shape.column + 1);
-            if (!(down || left || right)) {
-                shape.rotate();
-            }
-            
+            shape.rotate();        
             break;
         case 'ArrowDown':
             movement.down();

@@ -56,4 +56,4 @@ export class Movement {
         this.shape.column++;
         this.shape.draw();
     }
-}
+} 
