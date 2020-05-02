@@ -1,0 +1,42 @@
+
+body {
+    margin: 0 auto;
+    font-family: Arial;
+}
+#container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#right-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+#center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#left-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+h1 {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+#scorePlaceholder, #startGame, #linesPlaceholder, #scorePlaceholder, #nextShapePlaceholder {
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 15px;
+}
+button :hover {
+    color: brown;
+}
