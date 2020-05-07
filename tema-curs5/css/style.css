@@ -1,6 +1,6 @@
 
 body {
-    margin: 0 auto;
+    
     font-family: Arial;
 }
 #container {
@@ -9,6 +9,7 @@ body {
     justify-content: center;
 }
 #right-content {
+    width: 33.33%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,6 +23,7 @@ body {
     justify-content: center;
 }
 #left-content {
+    width: 33.33%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,13 +32,31 @@ body {
 h1 {
     writing-mode: vertical-rl;
     text-orientation: upright;
+    font-size: 50px;
+    color: #9dace3;
 }
 #scorePlaceholder, #startGame, #linesPlaceholder, #scorePlaceholder, #nextShapePlaceholder {
-    border: 3px solid black;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 15px;
+    border: 2px solid #9dace3 ;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 5px;    
+    width: 50%;
+    color: #9dace3;
+    padding: 10px;
 }
-button :hover {
-    color: brown;
+#startGame {
+    margin-top: 10px;
+    background-color: #9dace3;
+    color: #09112e;
+    cursor: pointer;
+    
+}
+/* #startGame:hover {
+    background-color: black;
+    color: white;
+  } */
+
+#nextShapeCanvas {
+    width: 50px;
+    height: 150px;
 }

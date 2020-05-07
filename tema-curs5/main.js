@@ -1,6 +1,7 @@
 import { Grid } from './grid.js';
 import { Movement } from './shapes/utils/movement.js';
 import { generateNewShape, getRandomInt } from './shapes/utils/shape-generator.js';
+import {NewCellRightDisplay} from "./newCellRightDisplay.js"
 
 const rows = 20;
 const columns = 10;
@@ -11,8 +12,15 @@ const grid = new Grid(rows, columns);
 grid.create();
 grid.draw();
 
+
+const newCellRightDisplayRows = 5;
+const newCellRightDisplayColums = 5;
+let newCellRightDisplay = new NewCellRightDisplay(newCellRightDisplayRows, newCellRightDisplayColums);
+newCellRightDisplay.create()
+newCellRightDisplay.draw();
+
 let shape = generateNewShape(grid.cells);
-document.body.style.background = `radial-gradient(${shape.color}, transparent)`;
+document.body.style.background = `#09112e`;
 let movement = new Movement(shape, grid.cells);
 
 document.addEventListener("keydown", event => {
@@ -57,7 +65,7 @@ const animate = () => {
             grid.draw();
         }
         shape = generateNewShape(grid.cells);
-        document.body.style.background = `radial-gradient(${shape.color}, transparent)`;
+        //document.body.style.background = `radial-gradient(${shape.color}, transparent)`;
         movement = new Movement(shape, grid.cells);
         intervalId = setInterval(animate, 200);
     }
@@ -68,7 +76,10 @@ document.getElementById('startGame').addEventListener('click', () => {
 
     if(movement.canMove) {
         document.getElementById("startGame").disabled = true;
-    } else  document.getElementById("startGame").disabled = false;
+    } else  { 
+        document.getElementById("startGame").disabled = false;
+        document.getElementById("startGame").color = "red"
+    }
     
 });
 
